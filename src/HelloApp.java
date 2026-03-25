@@ -1,31 +1,32 @@
 /**
- * HelloApp.java - A simple Java application that displays "Hello World"
- * and optionally greets a user by name using command-line arguments.
- *
- * UC 1: Display "Hello World" - The application should display the message
- * "Hello World" to the console when executed without arguments.
- *
- * UC 2: Display User Name - The application should accept a user's name as
- * a command-line argument and display a personalized greeting.
- *
- * @author Anmol
- * @version 2.0
- * @since UC1
+ * HelloApp.java - A simple Java application that greets the user by name. 
+ * If no name is given, it greets "World". This demonstrates how to handle 
+ * optional command-line arguments in Java.
+ * 
+ * UC3 Hello.java Code Snippet
  */
 
+/**
+ * Author: Anmol
+ * Version: 3.0  
+ * Since: UC1
+ */
 public class HelloApp {
-    
     public static void main(String[] args) {
-
-        // Check if user provided a name
+        // Default name="World"
+        String name = "World";  
+        
+        /**
+         * 1. Default Values: Providing fallback value when no input is given
+         * 2. Boolean Logic: Using conditions to control program flow
+         * 3. Array Length: Checking the number of command-line arguments
+         * 
+         * If name is provided as command-line argument, use the provided name
+         */
         if (args.length > 0) {
-            String name = args[0];
-            System.out.println("Hello, " + name + "!");
-        } 
-        else {
-            System.out.println("Hello, World!");
+            name = args[0];
         }
-
+        
+        System.out.println("Hello, " + name + "!");
     }
-
 }
